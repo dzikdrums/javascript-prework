@@ -1,12 +1,11 @@
-let computerMove = 'Kamien';
-let playerMove = 'Papier';
+let computerMove = Math.floor(Math.random() * 3 + 1);
 
-function printMessage(msg){
-	var div = document.createElement('div');
-	div.innerHTML = msg;
-	document.getElementById('messages').appendChild(div);
+if(computerMove == 1){
+  computerMove = 'kamień';
+} else if (computerMove == 2){
+  computerMove = 'papier';
+} else {
+  computerMove = 'nozyce';
 }
 
-function clearMessages(){
-	document.getElementById('messages').innerHTML = '';
-}
+document.write('Ruch komputera to: ' + computerMove);
