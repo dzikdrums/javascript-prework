@@ -9,3 +9,15 @@ if(computerMove == 1){
 }
 
 document.write('Ruch komputera to: ' + computerMove);
+
+let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+
+if(playerInput == 1){
+  playerMove = 'kamień';
+} else if (playerInput == 2){
+  playerInput = 'papier';
+} else {
+  playerInput = 'nozyce';
+}
+
+document.write(' Twój ruch to: ' + playerMove);
