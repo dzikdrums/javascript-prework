@@ -1,12 +1,12 @@
 function playGame(playerInput) {
   clearMessages();
 
-  function getMoveName(argMoveId){
-    if(argMoveId == 1){
+  function getMoveName(argMoveId) {
+    if (argMoveId === 1) {
       return 'kamien';
-    } else if (argMoveId == 2) {
+    } else if (argMoveId === 2) {
       return 'papier';
-    } else if (argMoveId == 3) {
+    } else if (argMoveId === 3) {
       return 'nozyce';
     }
     printMessage('Nie znam ruchu o id ' + argMoveId + '.');
@@ -14,30 +14,30 @@ function playGame(playerInput) {
   }
 
   function displayResult(argComputerMove, argPlayerMove) {
-    if (playerMove == "kamien" && computerMove == "papier") {
+    if (playerMove === "kamien" && computerMove == "papier") {
       printMessage("You lose!");
-    } else if (argPlayerMove == "kamien" && argComputerMove == "nozyce") {
+    } else if (argPlayerMove === "kamien" && argComputerMove === "nozyce") {
       printMessage("You win!");
-    } else if (argPlayerMove == "kamien" && argComputerMove == "kamien") {
+    } else if (argPlayerMove === "kamien" && argComputerMove === "kamien") {
       printMessage("Draw!");
-    } else if (argPlayerMove == "nozyce" && argComputerMove == "kamien") {
+    } else if (argPlayerMove === "nozyce" && argComputerMove === "kamien") {
       printMessage("You win!");
-    } else if (argPlayerMove == "nozyce" && argComputerMove == "papier") {
+    } else if (argPlayerMove === "nozyce" && argComputerMove === "papier") {
       printMessage("You win!");
-    } else if (argPlayerMove == "nozyce" && argComputerMove == "nozyce") {
+    } else if (argPlayerMove === "nozyce" && argComputerMove === "nozyce") {
       printMessage("Draw!");
-    } else if (argPlayerMove == "papier" && argComputerMove == "papier") {
+    } else if (argPlayerMove === "papier" && argComputerMove === "papier") {
       printMessage("Draw!");
-    } else if (argPlayerMove == "papier" && argComputerMove == "nozyce") {
+    } else if (argPlayerMove === "papier" && argComputerMove === "nozyce") {
       printMessage("You lose!");
-    } else  if (argPlayerMove == "papier" && argComputerMove == "kamien") {
+    } else  if (argPlayerMove === "papier" && argComputerMove === "kamien") {
       printMessage("You win!");
     }
   }
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
-  let computerMove = getMoveName(randomNumber);
-  let playerMove = getMoveName(playerInput);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
+  const computerMove = getMoveName(randomNumber);
+  const playerMove = getMoveName(playerInput);
 
   printMessage('Ruch komputera to: ' + computerMove);
   printMessage(' Twój ruch to: ' + playerMove);
