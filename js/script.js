@@ -29,16 +29,14 @@ function displayResult(argComputerMove, argPlayerMove) {
     printMessage("You lose!");
   } else  if (argPlayerMove == "papier" && argComputerMove == "kamien") {
     printMessage("You win!");
-  } else {
-    printMessage("Unknown move");
   }
 }
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-let randomNumber2 = Math.floor(Math.random() * 3 + 1);
+let userInput = prompt("Wybierz ruch: 1 - kamien, 2 - papier, 3 - nozyce");
 
 let computerMove = getMoveName(randomNumber);
-let playerMove = getMoveName(randomNumber2);
+let playerMove = getMoveName(userInput);
 
 printMessage('Ruch komputera to: ' + computerMove);
 printMessage(' Twój ruch to: ' + playerMove);
