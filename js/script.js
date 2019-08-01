@@ -19,7 +19,7 @@ function playGame(playerMove) {
     } else if (argPlayerMove === "kamien" && argComputerMove === "nozyce") {
       playerGamePoints++;
       printResult("You win!");
-    } else if (argPlayerMove === "kamien" && argComputerMove === "kamien") {
+    } else if (argPlayerMove === argComputerMove) {
       printResult("Draw!");
     } else if (argPlayerMove === "nozyce" && argComputerMove === "kamien") {
       computerGamePoints++;
@@ -27,9 +27,9 @@ function playGame(playerMove) {
     } else if (argPlayerMove === "nozyce" && argComputerMove === "papier") {
       playerGamePoints++;
       printResult("You win!");
-    } else if (argPlayerMove === "nozyce" && argComputerMove === "nozyce") {
+    } else if (argPlayerMove === argComputerMove) {
       printResult("Draw!");
-    } else if (argPlayerMove === "papier" && argComputerMove === "papier") {
+    } else if (argPlayerMove === argComputerMove) {
       printResult("Draw!");
     } else if (argPlayerMove === "papier" && argComputerMove === "nozyce") {
       computerGamePoints++;
