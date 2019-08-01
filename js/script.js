@@ -1,4 +1,4 @@
-function playGame(playerInput) {
+function playGame(playerMove) {
   clearMessages();
 
   function getMoveName(argMoveId) {
@@ -34,10 +34,8 @@ function playGame(playerInput) {
       printMessage("You win!");
     }
   }
-
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   const computerMove = getMoveName(randomNumber);
-  const playerMove = getMoveName(playerInput);
 
   printMessage('Ruch komputera to: ' + computerMove);
   printMessage(' Twój ruch to: ' + playerMove);
@@ -46,13 +44,13 @@ function playGame(playerInput) {
 }
 
 document.getElementById('play_rock').addEventListener('click', function(){
-  playGame(1);
+  playGame("kamien");
 });
 
 document.getElementById('play_paper').addEventListener('click', function(){
-  playGame(2);
+  playGame("papier");
 });
 
 document.getElementById('play_scissors').addEventListener('click', function(){
-  playGame(3);
+  playGame("nozyce");
 });
