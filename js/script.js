@@ -1,5 +1,4 @@
 function playGame(playerMove) {
-  clearMessages();
 
   function getMoveName(argMoveId) {
     if (argMoveId === 1) {
@@ -15,33 +14,78 @@ function playGame(playerMove) {
 
   function displayResult(argComputerMove, argPlayerMove) {
     if (playerMove === "kamien" && computerMove == "papier") {
-      printMessage("You lose!");
+      computerGamePoints++;
+      printResult("You lose!");
     } else if (argPlayerMove === "kamien" && argComputerMove === "nozyce") {
-      printMessage("You win!");
+      playerGamePoints++;
+      printResult("You win!");
     } else if (argPlayerMove === "kamien" && argComputerMove === "kamien") {
-      printMessage("Draw!");
+      printResult("Draw!");
     } else if (argPlayerMove === "nozyce" && argComputerMove === "kamien") {
-      printMessage("You win!");
+      computerGamePoints++;
+      printResult("You lose!");
     } else if (argPlayerMove === "nozyce" && argComputerMove === "papier") {
-      printMessage("You win!");
+      playerGamePoints++;
+      printResult("You win!");
     } else if (argPlayerMove === "nozyce" && argComputerMove === "nozyce") {
-      printMessage("Draw!");
+      printResult("Draw!");
     } else if (argPlayerMove === "papier" && argComputerMove === "papier") {
-      printMessage("Draw!");
+      printResult("Draw!");
     } else if (argPlayerMove === "papier" && argComputerMove === "nozyce") {
-      printMessage("You lose!");
+      computerGamePoints++;
+      printResult("You lose!");
     } else  if (argPlayerMove === "papier" && argComputerMove === "kamien") {
-      printMessage("You win!");
+      playerGamePoints++;
+      printResult("You win!");
     }
   }
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   const computerMove = getMoveName(randomNumber);
 
-  printMessage('Ruch komputera to: ' + computerMove);
-  printMessage(' Twój ruch to: ' + playerMove);
-  displayResult(computerMove, playerMove);
+    clearMessages();
+    clearResults();
+    clearMatchCount();
+    displayResult(computerMove, playerMove);
+    printMessage("Maszyna--->" + computerGamePoints + " Człowiek--->" + playerGamePoints);
+    printMessage("_________________");
+    printMessage('Ruch komputera to: ' + computerMove);
+    printMessage(' Twój ruch to: ' + playerMove);
+    checkIfEndGame();
+
+
+    function checkIfEndGame() {
+      if(computerGamePoints == 5 || playerGamePoints == 5 ) {
+        if (computerGamePoints == 5) {
+          computerMatchPoints++
+        } else {
+          playerMatchPoints++
+        }
+        computerGamePoints = 0;
+        playerGamePoints = 0;
+        clearMessages();
+        clearResults();
+        printMatchCount("Mecze wygrane przez maszyne: " + computerMatchPoints + "\n Mecze wygrane przez człowieka: " + playerMatchPoints);
+      }
+    }
+
 
 }
+
+function resetGame() {
+  computerGamePoints = 0;
+  playerGamePoints = 0;
+  computerMatchPoints = 0;
+  playerMatchPoints = 0;
+  clearMessages();
+  clearResults();
+  clearMatchCount();
+}
+
+
+var computerGamePoints = 0;
+var playerGamePoints = 0;
+var computerMatchPoints = 0;
+var playerMatchPoints = 0;
 
 document.getElementById('play_rock').addEventListener('click', function(){
   playGame("kamien");
@@ -53,4 +97,8 @@ document.getElementById('play_paper').addEventListener('click', function(){
 
 document.getElementById('play_scissors').addEventListener('click', function(){
   playGame("nozyce");
+});
+
+document.getElementById('reset').addEventListener('click', function(){
+  resetGame();
 });

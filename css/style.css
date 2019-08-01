@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #FFEA00;
+}
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.box {
+  margin-top: 20px;
+  height: 450px;
+  width: 900px;
+  background: url(../images/rock_paper_scissors.png) no-repeat;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+#button {
+  width: 700px;
+  margin-left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+
+.btn {
+  margin-top: 40px;
+  margin-right: 220px;
+  background: transparent;
+  border: 2px black solid;
+  border-radius: 3px;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: transform 0.5s;
+}
+
+.btn:hover {
+  transform: scale(0.9);
+}
+
+.btn-reset {
+  background: transparent;
+  border: 2px black solid;
+  border-radius: 3px;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: transform 0.5s;
+}
+
+.btn-reset:hover {
+  transform: scale(0.9);
+}
+
+.title {
+  font-family: "Lacquer", sans-serif;
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 0;
+  padding: 0;
+  font-size: 40px;
+}
+
+.messages {
+  margin-top: 260px;
+  text-align: center;
+  font-family: "Lacquer", sans-serif;
+  font-size: 30px;
+}
+
+.result {
+  color: red;
+  text-align: center;
+  font-family: "Lacquer", sans-serif;
+  font-size: 30px;
+}
+
+.matchCount {
+  margin-top: 100px;
+  margin-left: 40px;
+  width: 700px;
+  text-align: center;
+  font-family: "Lacquer", sans-serif;
+  font-size: 40px;
+}
+/*# sourceMappingURL=style.css.map */

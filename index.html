@@ -2,18 +2,28 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Kamień, papier, nożyce</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kamień, nożyce, papier</title>
+	<link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="container">
-		<div id="buttons">
-      <button id="play_rock">kamien</button>
-      <button id="play_paper">papier</button>
-      <button id="play_scissors">nozyce</button>
-
-    </div>
-		<div id="messages"></div>
+		<div class="box">
+			<h1 class='title'>Dokonaj wyboru narzędzia</h2>
+			<button id="reset" class="btn-reset">Reset</button>
+			<div id="button" >
+	      <button id="play_rock" class="btn">kamień</button>
+	      <button id="play_scissors" class="btn">nożyce</button>
+	      <button id="play_paper" class="btn">papier</button>
+	    </div>
+			<div id="messages" class="messages">
+			</div>
+			<div id="result" class="result">
+			</div>
+			<div id="matchCount" class="matchCount">
+			</div>
+	  </div>
 	</div>
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
