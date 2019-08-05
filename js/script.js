@@ -27,10 +27,6 @@ function playGame(playerMove) {
     } else if (argPlayerMove === "nozyce" && argComputerMove === "papier") {
       playerGamePoints++;
       printResult("You win!");
-    } else if (argPlayerMove === argComputerMove) {
-      printResult("Draw!");
-    } else if (argPlayerMove === argComputerMove) {
-      printResult("Draw!");
     } else if (argPlayerMove === "papier" && argComputerMove === "nozyce") {
       computerGamePoints++;
       printResult("You lose!");
