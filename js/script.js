@@ -1,3 +1,5 @@
+{
+
 function playGame(playerMove) {
 
   function getMoveName(argMoveId) {
@@ -78,10 +80,10 @@ function resetGame() {
 }
 
 
-var computerGamePoints = 0;
-var playerGamePoints = 0;
-var computerMatchPoints = 0;
-var playerMatchPoints = 0;
+let computerGamePoints = 0;
+let playerGamePoints = 0;
+let computerMatchPoints = 0;
+let playerMatchPoints = 0;
 
 document.getElementById('play_rock').addEventListener('click', function(){
   playGame("kamien");
@@ -98,3 +100,5 @@ document.getElementById('play_scissors').addEventListener('click', function(){
 document.getElementById('reset').addEventListener('click', function(){
   resetGame();
 });
+
+}
